@@ -45,10 +45,11 @@ jobs:
       #     sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
       #     sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
     
   # ---
   
@@ -85,10 +86,11 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
     
   # ---
   
@@ -125,10 +127,11 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
   # ======================================================================
   
@@ -165,10 +168,11 @@ jobs:
       #    sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
       #    sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
   # ---
   
@@ -205,10 +209,11 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
     
   # ---
   
@@ -245,10 +250,11 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
   # ======================================================================
 
@@ -285,10 +291,11 @@ jobs:
       #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
       #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
     
   # ---
   
@@ -325,10 +332,11 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
   
   # ---
   
@@ -365,10 +373,11 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
   # ======================================================================
   
@@ -405,10 +414,11 @@ jobs:
       #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
       #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
   
   # ---
 
@@ -445,10 +455,11 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
   
   # ---
 
@@ -485,7 +496,8 @@ jobs:
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
-      - name: Build and zip
-        run: |
-          bash $GITHUB_WORKSPACE/travis/compile.sh
-          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
