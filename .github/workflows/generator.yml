@@ -56,6 +56,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03/Linux-jdk11-HotSpot-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03/Windows-jdk11-HotSpot-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03/MacOS-jdk11-HotSpot-SWT_2021-03.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk11-HotSpot-SWT_2021-03
+          path: $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03
     
   # ---
   
@@ -103,6 +115,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06/Linux-jdk11-HotSpot-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06/Windows-jdk11-HotSpot-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06/MacOS-jdk11-HotSpot-SWT_2021-06.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk11-HotSpot-SWT_2021-06
+          path: $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06
     
   # ---
   
@@ -150,6 +174,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09/Linux-jdk11-HotSpot-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09/Windows-jdk11-HotSpot-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09/MacOS-jdk11-HotSpot-SWT_2021-09.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk11-HotSpot-SWT_2021-09
+          path: $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09
 
   # ======================================================================
   
@@ -197,6 +233,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03/Linux-jdk11-OpenJ9-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03/Windows-jdk11-OpenJ9-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03/MacOS-jdk11-OpenJ9-SWT_2021-03.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk11-OpenJ9-SWT_2021-03
+          path: $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03
 
   # ---
   
@@ -244,6 +292,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06/Linux-jdk11-OpenJ9-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06/Windows-jdk11-OpenJ9-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06/MacOS-jdk11-OpenJ9-SWT_2021-06.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk11-OpenJ9-SWT_2021-06
+          path: $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06
     
   # ---
   
@@ -291,6 +351,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09/Linux-jdk11-OpenJ9-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09/Windows-jdk11-OpenJ9-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09/MacOS-jdk11-OpenJ9-SWT_2021-09.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk11-OpenJ9-SWT_2021-09
+          path: $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09
 
   # ======================================================================
 
@@ -336,6 +408,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03/Linux-jdk15-HotSpot-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03/Windows-jdk15-HotSpot-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03/MacOS-jdk15-HotSpot-SWT_2021-03.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk15-HotSpot-SWT_2021-03
+          path: $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03
     
   # ---
   
@@ -381,6 +465,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06/Linux-jdk15-HotSpot-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06/Windows-jdk15-HotSpot-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06/MacOS-jdk15-HotSpot-SWT_2021-06.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk15-HotSpot-SWT_2021-06
+          path: $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06
   
   # ---
   
@@ -426,6 +522,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09/Linux-jdk15-HotSpot-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09/Windows-jdk15-HotSpot-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09/MacOS-jdk15-HotSpot-SWT_2021-09.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk15-HotSpot-SWT_2021-09
+          path: $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09
 
   # ======================================================================
   
@@ -471,6 +579,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03/Linux-jdk15-OpenJ9-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03/Windows-jdk15-OpenJ9-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03/MacOS-jdk15-OpenJ9-SWT_2021-03.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk15-OpenJ9-SWT_2021-03
+          path: $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03
   
   # ---
 
@@ -516,6 +636,18 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06/Linux-jdk15-OpenJ9-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06/Windows-jdk15-OpenJ9-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06/MacOS-jdk15-OpenJ9-SWT_2021-06.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk15-OpenJ9-SWT_2021-06
+          path: $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06
   
   # ---
 
@@ -561,3 +693,15 @@ jobs:
       
       - name: Test build headless
         run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09/Linux-jdk15-OpenJ9-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09/Windows-jdk15-OpenJ9-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09/MacOS-jdk15-OpenJ9-SWT_2021-09.zip
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: jdk15-OpenJ9-SWT_2021-09
+          path: $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09
