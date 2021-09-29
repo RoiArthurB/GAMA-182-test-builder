@@ -752,67 +752,95 @@ jobs:
     steps:
 
       - name: Get every builds
-        run: mkdir $GITHUB_WORKSPACE/artifacts $GITHUB_WORKSPACE/release
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        run: |
+          mkdir ./artifacts
+          mkdir ./release
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk11-HotSpot-SWT_2021-03
-          path: $GITHUB_WORKSPACE/artifacts/jdk11-HotSpot-SWT_2021-03
+          path: ./artifacts/jdk11-HotSpot-SWT_2021-03
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk11-HotSpot-SWT_2021-06
-          path: $GITHUB_WORKSPACE/artifacts/jdk11-HotSpot-SWT_2021-06
+          path: ./artifacts/jdk11-HotSpot-SWT_2021-06
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk11-HotSpot-SWT_2021-09
-          path: $GITHUB_WORKSPACE/artifacts/jdk11-HotSpot-SWT_2021-09
+          path: ./artifacts/jdk11-HotSpot-SWT_2021-09
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk11-OpenJ9-SWT_2021-03
-          path: $GITHUB_WORKSPACE/artifacts/jdk11-OpenJ9-SWT_2021-03
+          path: ./artifacts/jdk11-OpenJ9-SWT_2021-03
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk11-OpenJ9-SWT_2021-06
-          path: $GITHUB_WORKSPACE/artifacts/jdk11-OpenJ9-SWT_2021-06
+          path: ./artifacts/jdk11-OpenJ9-SWT_2021-06
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk11-OpenJ9-SWT_2021-09
-          path: $GITHUB_WORKSPACE/artifacts/jdk11-OpenJ9-SWT_2021-09
+          path: ./artifacts/jdk11-OpenJ9-SWT_2021-09
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk15-HotSpot-SWT_2021-03
-          path: $GITHUB_WORKSPACE/artifacts/jdk15-HotSpot-SWT_2021-03
+          path: ./artifacts/jdk15-HotSpot-SWT_2021-03
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk15-HotSpot-SWT_2021-06
-          path: $GITHUB_WORKSPACE/artifacts/jdk15-HotSpot-SWT_2021-06
+          path: ./artifacts/jdk15-HotSpot-SWT_2021-06
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk15-HotSpot-SWT_2021-09
-          path: $GITHUB_WORKSPACE/artifacts/jdk15-HotSpot-SWT_2021-09
+          path: ./artifacts/jdk15-HotSpot-SWT_2021-09
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk15-OpenJ9-SWT_2021-03
-          path: $GITHUB_WORKSPACE/artifacts/jdk15-OpenJ9-SWT_2021-03
+          path: ./artifacts/jdk15-OpenJ9-SWT_2021-03
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk15-OpenJ9-SWT_2021-06
-          path: $GITHUB_WORKSPACE/artifacts/jdk15-OpenJ9-SWT_2021-06
+          path: ./artifacts/jdk15-OpenJ9-SWT_2021-06
 
       - uses: actions/download-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           name: jdk15-OpenJ9-SWT_2021-09
-          path: $GITHUB_WORKSPACE/artifacts/jdk15-OpenJ9-SWT_2021-09
+          path: ./artifacts/jdk15-OpenJ9-SWT_2021-09
 
       - name: Prepare releases
         env:
