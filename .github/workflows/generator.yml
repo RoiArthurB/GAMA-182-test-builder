@@ -52,6 +52,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
     
   # ---
   
@@ -95,6 +98,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
     
   # ---
   
@@ -138,6 +144,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
 
   # ======================================================================
   
@@ -181,6 +190,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
 
   # ---
   
@@ -224,6 +236,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
     
   # ---
   
@@ -267,6 +282,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
 
   # ======================================================================
 
@@ -308,6 +326,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
     
   # ---
   
@@ -349,6 +370,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
   
   # ---
   
@@ -390,6 +414,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
 
   # ======================================================================
   
@@ -431,6 +458,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
   
   # ---
 
@@ -472,6 +502,9 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
   
   # ---
 
@@ -513,3 +546,6 @@ jobs:
       
       - name: Zip
         run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
