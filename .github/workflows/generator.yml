@@ -251,6 +251,126 @@ jobs:
           bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
   # ======================================================================
+
+  jdk15-HotSpot-SWT_2021-03:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up AdoptOpenJDK 15 Hotspot
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'adopt-hotspot'
+          java-version: '15'
+          java-package: jdk
+
+      - name: Change JDK
+        run: |
+          # # POM
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_linux_hotspot_15.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_windows_hotspot_15.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_mac_hotspot_15.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      # - name: Change SWT
+      #   run: |
+      #     # POM
+      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build and zip
+        run: |
+          bash $GITHUB_WORKSPACE/travis/compile.sh
+          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+    
+  # ---
+  
+  jdk15-HotSpot-SWT_2021-06:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up AdoptOpenJDK 15 Hotspot
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'adopt-hotspot'
+          java-version: '15'
+          java-package: jdk
+
+      - name: Change JDK
+        run: |
+          # # POM
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_linux_hotspot_15.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_windows_hotspot_15.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_mac_hotspot_15.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      - name: Change SWT
+        run: |
+          # POM
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build and zip
+        run: |
+          bash $GITHUB_WORKSPACE/travis/compile.sh
+          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+  
+  # ---
+  
+  jdk15-HotSpot-SWT_2021-09:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up AdoptOpenJDK 15 Hotspot
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'adopt-hotspot'
+          java-version: '15'
+          java-package: jdk
+
+      - name: Change JDK
+        run: |
+          # # POM
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          # sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_linux_hotspot_15.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_windows_hotspot_15.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk15-binaries\/releases\/download\/jdk-15.0.2%2B7\/OpenJDK15U-jdk_x64_mac_hotspot_15.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      - name: Change SWT
+        run: |
+          # POM
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build and zip
+        run: |
+          bash $GITHUB_WORKSPACE/travis/compile.sh
+          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+  # ======================================================================
   
   jdk15-OpenJ9-SWT_2021-03:
     runs-on: ubuntu-latest
