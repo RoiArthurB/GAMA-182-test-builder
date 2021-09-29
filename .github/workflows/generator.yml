@@ -26,6 +26,7 @@ jobs:
           distribution: 'adopt-hotspot'
           java-version: '11'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -72,6 +73,7 @@ jobs:
           distribution: 'adopt-hotspot'
           java-version: '11'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -118,6 +120,7 @@ jobs:
           distribution: 'adopt-hotspot'
           java-version: '11'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -164,6 +167,7 @@ jobs:
           distribution: 'adopt-openj9'
           java-version: '11'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -210,6 +214,7 @@ jobs:
           distribution: 'adopt-openj9'
           java-version: '11'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -256,6 +261,7 @@ jobs:
           distribution: 'adopt-openj9'
           java-version: '11'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -302,6 +308,7 @@ jobs:
           distribution: 'adopt-hotspot'
           java-version: '15'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -346,6 +353,7 @@ jobs:
           distribution: 'adopt-hotspot'
           java-version: '15'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -390,6 +398,7 @@ jobs:
           distribution: 'adopt-hotspot'
           java-version: '15'
           java-package: jdk
+          cache: 'maven'
 
       - name: Change JDK
         run: |
@@ -434,6 +443,7 @@ jobs:
           distribution: 'adopt-openj9'
           java-version: '15'
           java-package: jdk
+          cache: 'maven'
 
       # - name: Change JDK
       #   run: |
@@ -478,6 +488,7 @@ jobs:
           distribution: 'adopt-openj9'
           java-version: '15'
           java-package: jdk
+          cache: 'maven'
 
       # - name: Change JDK
       #   run: |
@@ -522,6 +533,7 @@ jobs:
           distribution: 'adopt-openj9'
           java-version: '15'
           java-package: jdk
+          cache: 'maven'
 
       # - name: Change JDK
       #   run: |
