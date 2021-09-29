@@ -1,0 +1,131 @@
+# This workflow will build different GAMA release
+# For more information see: https://github.com/actions/setup-java#apache-maven-with-a-settings-path
+
+name: GAMA Generator
+
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # For manual trigger
+
+
+jobs:
+  
+  jdk11-OpenJ9-SWT_2021-03:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up AdoptOpenJDK 11 OpenJ9
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'adopt-openj9'
+          java-version: '11'
+          java-package: jdk
+
+      - name: Change JDK
+        run: |
+          # POM
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_linux_openj9_11.0.11_9_openj9-0.26.0.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_windows_openj9_11.0.11_9_openj9-0.26.0.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_mac_openj9_11.0.11_9_openj9-0.26.0.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      #- name: Change SWT
+      #  run: |
+      #    # POM
+      #    sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+      #    sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+      #    sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build and zip
+        run: |
+          bash $GITHUB_WORKSPACE/travis/compile.sh
+          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+  # ---
+  
+  jdk11-OpenJ9-SWT_2021-06:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up AdoptOpenJDK 11 OpenJ9
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'adopt-openj9'
+          java-version: '11'
+          java-package: jdk
+
+      - name: Change JDK
+        run: |
+          # POM
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_linux_openj9_11.0.11_9_openj9-0.26.0.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_windows_openj9_11.0.11_9_openj9-0.26.0.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_mac_openj9_11.0.11_9_openj9-0.26.0.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      - name: Change SWT
+        run: |
+          # POM
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build and zip
+        run: |
+          bash $GITHUB_WORKSPACE/travis/compile.sh
+          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+    
+  # ---
+  
+  jdk11-OpenJ9-SWT_2021-09:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up AdoptOpenJDK 11 OpenJ9
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'adopt-openj9'
+          java-version: '11'
+          java-package: jdk
+
+      - name: Change JDK
+        run: |
+          # POM
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>11/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_linux_openj9_11.0.11_9_openj9-0.26.0.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_windows_openj9_11.0.11_9_openj9-0.26.0.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/AdoptOpenJDK\/openjdk11-binaries\/releases\/download\/jdk-11.0.11%2B9_openj9-0.26.0\/OpenJDK11U-jdk_x64_mac_openj9_11.0.11_9_openj9-0.26.0.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      - name: Change SWT
+        run: |
+          # POM
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build and zip
+        run: |
+          bash $GITHUB_WORKSPACE/travis/compile.sh
+          bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
