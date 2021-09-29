@@ -705,3 +705,14 @@ jobs:
         with:
           name: jdk15-OpenJ9-SWT_2021-09
           path: $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09
+
+  # ======================================================================
+  # ----------------------------------------------------------------------
+  # ======================================================================
+
+  lets-publish:
+    needs: [jdk11-HotSpot-SWT_2021-03, jdk11-HotSpot-SWT_2021-06, jdk11-HotSpot-SWT_2021-09, jdk11-OpenJ9-SWT_2021-03, jdk11-OpenJ9-SWT_2021-06, jdk11-OpenJ9-SWT_2021-09, jdk15-HotSpot-SWT_2021-03, jdk15-HotSpot-SWT_2021-06, jdk15-HotSpot-SWT_2021-09, jdk15-OpenJ9-SWT_2021-03, jdk15-OpenJ9-SWT_2021-06, jdk15-OpenJ9-SWT_2021-09]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up AdoptOpenJDK 15 OpenJ9
+        run: echo "Everything finished :D" 
