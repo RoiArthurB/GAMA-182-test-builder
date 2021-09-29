@@ -63,7 +63,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03/Linux-jdk11-HotSpot-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03/Windows-jdk11-HotSpot-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03/MacOS-jdk11-HotSpot-SWT_2021-03.zip
-          ls -l $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03
+          ls -lh $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-03
 
       - uses: actions/upload-artifact@master
         env:
@@ -125,7 +125,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06/Linux-jdk11-HotSpot-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06/Windows-jdk11-HotSpot-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06/MacOS-jdk11-HotSpot-SWT_2021-06.zip
-          ls -l $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06
+          ls -lh $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-06
 
       - uses: actions/upload-artifact@master
         env:
@@ -187,7 +187,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09/Linux-jdk11-HotSpot-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09/Windows-jdk11-HotSpot-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09/MacOS-jdk11-HotSpot-SWT_2021-09.zip
-          ls -l $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09
+          ls -lh $GITHUB_WORKSPACE/jdk11-HotSpot-SWT_2021-09
 
       - uses: actions/upload-artifact@master
         env:
@@ -249,7 +249,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03/Linux-jdk11-OpenJ9-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03/Windows-jdk11-OpenJ9-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03/MacOS-jdk11-OpenJ9-SWT_2021-03.zip
-          ls -l $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03
+          ls -lh $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-03
 
       - uses: actions/upload-artifact@master
         env:
@@ -311,7 +311,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06/Linux-jdk11-OpenJ9-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06/Windows-jdk11-OpenJ9-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06/MacOS-jdk11-OpenJ9-SWT_2021-06.zip
-          ls -l $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06
+          ls -lh $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-06
 
       - uses: actions/upload-artifact@master
         env:
@@ -373,7 +373,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09/Linux-jdk11-OpenJ9-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09/Windows-jdk11-OpenJ9-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09/MacOS-jdk11-OpenJ9-SWT_2021-09.zip
-          ls -l $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09
+          ls -lh $GITHUB_WORKSPACE/jdk11-OpenJ9-SWT_2021-09
 
       - uses: actions/upload-artifact@master
         env:
@@ -433,7 +433,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03/Linux-jdk15-HotSpot-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03/Windows-jdk15-HotSpot-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03/MacOS-jdk15-HotSpot-SWT_2021-03.zip
-          ls -l $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03
+          ls -lh $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-03
 
       - uses: actions/upload-artifact@master
         env:
@@ -493,7 +493,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06/Linux-jdk15-HotSpot-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06/Windows-jdk15-HotSpot-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06/MacOS-jdk15-HotSpot-SWT_2021-06.zip
-          ls -l $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06
+          ls -lh $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-06
 
       - uses: actions/upload-artifact@master
         env:
@@ -553,7 +553,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09/Linux-jdk15-HotSpot-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09/Windows-jdk15-HotSpot-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09/MacOS-jdk15-HotSpot-SWT_2021-09.zip
-          ls -l $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09
+          ls -lh $GITHUB_WORKSPACE/jdk15-HotSpot-SWT_2021-09
 
       - uses: actions/upload-artifact@master
         env:
@@ -613,7 +613,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03/Linux-jdk15-OpenJ9-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03/Windows-jdk15-OpenJ9-SWT_2021-03.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03/MacOS-jdk15-OpenJ9-SWT_2021-03.zip
-          ls -l $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03
+          ls -lh $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-03
 
       - uses: actions/upload-artifact@master
         env:
@@ -673,7 +673,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06/Linux-jdk15-OpenJ9-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06/Windows-jdk15-OpenJ9-SWT_2021-06.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06/MacOS-jdk15-OpenJ9-SWT_2021-06.zip
-          ls -l $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06
+          ls -lh $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-06
 
       - uses: actions/upload-artifact@master
         env:
@@ -733,7 +733,7 @@ jobs:
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09/Linux-jdk15-OpenJ9-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09/Windows-jdk15-OpenJ9-SWT_2021-09.zip
           mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09/MacOS-jdk15-OpenJ9-SWT_2021-09.zip
-          ls -l $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09
+          ls -lh $GITHUB_WORKSPACE/jdk15-OpenJ9-SWT_2021-09
 
       - uses: actions/upload-artifact@master
         env:
@@ -815,15 +815,19 @@ jobs:
           path: $GITHUB_WORKSPACE/artifacts/jdk15-OpenJ9-SWT_2021-09
 
       - name: Prepare releases
+        env:
+          working_directory: $GITHUB_WORKSPACE
         run: |
-          find $GITHUB_WORKSPACE/artifacts -name "*zip" -exec mv {} $GITHUB_WORKSPACE/release/ \;
-          ls -l $GITHUB_WORKSPACE/release
+          find ./artifacts -name "*zip" -exec mv {} ./release/ \;
+          ls -lh ./release
 
       - uses: "marvinpinto/action-automatic-releases@latest"
+        env:
+          working_directory: $GITHUB_WORKSPACE
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
           title: "Development Build"
           files: |
-            $GITHUB_WORKSPACE/release/*.zip
+            *.zip
