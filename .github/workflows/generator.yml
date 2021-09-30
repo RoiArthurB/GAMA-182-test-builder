@@ -782,6 +782,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_mac_hotspot_16.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-16\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       # - name: Change SWT
       #   run: |
@@ -842,6 +844,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_mac_hotspot_16.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-16\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       - name: Change SWT
         run: |
@@ -902,6 +906,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_linux_hotspot_16.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_windows_hotspot_16.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin16-binaries\/releases\/download\/jdk-16.0.2%2B7\/OpenJDK16U-jdk_x64_mac_hotspot_16.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-16\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       - name: Change SWT
         run: |
@@ -968,6 +974,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_linux_16.0.2_7_openj9-0.27.0.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_windows_16.0.2_7_openj9-0.27.0.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_mac_16.0.2_7_openj9-0.27.0.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-16\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       # - name: Change SWT
       #   run: |
@@ -1032,6 +1040,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_linux_16.0.2_7_openj9-0.27.0.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_windows_16.0.2_7_openj9-0.27.0.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_mac_16.0.2_7_openj9-0.27.0.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-16\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       - name: Change SWT
         run: |
@@ -1096,6 +1106,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_linux_16.0.2_7_openj9-0.27.0.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_windows_16.0.2_7_openj9-0.27.0.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/ibmruntimes\/semeru16-binaries\/releases\/download\/jdk-16.0.2%2B7_openj9-0.27.0\/ibm-semeru-open-jdk_x64_mac_16.0.2_7_openj9-0.27.0.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-16\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       - name: Change SWT
         run: |
@@ -1158,6 +1170,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget           https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17%2B35\/OpenJDK17-jdk_x64_linux_hotspot_17_35.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17%2B35\/OpenJDK17-jdk_x64_windows_hotspot_17_35.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17%2B35\/OpenJDK17-jdk_x64_mac_hotspot_17_35.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       # - name: Change SWT
       #   run: |
@@ -1218,6 +1232,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.2%2B7\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.2%2B7\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.2%2B7\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       - name: Change SWT
         run: |
@@ -1278,6 +1294,8 @@ jobs:
           sed -i 's/wget \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.2%2B7\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.2_7.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.2%2B7\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.2_7.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.2%2B7\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.2_7.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
 
       - name: Change SWT
         run: |
