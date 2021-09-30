@@ -848,13 +848,15 @@ jobs:
         run: |
           find ./artifacts -name "*zip" -exec mv {} ./release/ \;
           ls -lh ./release
-
-      - uses: softprops/action-gh-release@v1
+          
+      - uses: "marvinpinto/action-automatic-releases@latest"
         env:
           working_directory: $GITHUB_WORKSPACE/release
         with:
-          name: "Development Build"
-          fail_on_unmatched_files: True
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Development Build"
           files: |
             Linux-jdk11-HotSpot-SWT_2021-03.zip
             Linux-jdk11-HotSpot-SWT_2021-06.zip
