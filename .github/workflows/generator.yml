@@ -851,7 +851,7 @@ jobs:
 
       - uses: softprops/action-gh-release@v1
         env:
-          working_directory: $GITHUB_WORKSPACE
+          working_directory: $GITHUB_WORKSPACE/release
         with:
           name: "Development Build"
           fail_on_unmatched_files: True
