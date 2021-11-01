@@ -1166,6 +1166,7 @@ jobs:
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          sed -i 's/JavaSE-11/JavaSE-17/g' $GITHUB_WORKSPACE/**/META-INF/MANIFEST.MF
           # Zipped JDK
           sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
@@ -1228,6 +1229,7 @@ jobs:
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          sed -i 's/JavaSE-11/JavaSE-17/g' $GITHUB_WORKSPACE/**/META-INF/MANIFEST.MF
           # Zipped JDK
           sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
@@ -1290,6 +1292,7 @@ jobs:
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          sed -i 's/JavaSE-11/JavaSE-17/g' $GITHUB_WORKSPACE/**/META-INF/MANIFEST.MF
           # Zipped JDK
           sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
           sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
