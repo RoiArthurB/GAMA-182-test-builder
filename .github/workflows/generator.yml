@@ -1152,7 +1152,7 @@ jobs:
           repository: 'gama-platform/gama'
           ref: 'GAMA_1.8.2'
       
-      - name: Set up Adoptium 17
+      - name: Set up Temurin 17
         uses: actions/setup-java@v2 
         with:
           distribution: 'temurin'
@@ -1214,7 +1214,7 @@ jobs:
           repository: 'gama-platform/gama'
           ref: 'GAMA_1.8.2'
       
-      - name: Set up Adoptium 17
+      - name: Set up Temurin 17
         uses: actions/setup-java@v2 
         with:
           distribution: 'temurin'
@@ -1276,7 +1276,7 @@ jobs:
           repository: 'gama-platform/gama'
           ref: 'GAMA_1.8.2'
       
-      - name: Set up Adoptium 17
+      - name: Set up Temurin 17
         uses: actions/setup-java@v2 
         with:
           distribution: 'temurin'
