@@ -1141,6 +1141,200 @@ jobs:
           path: ./jdk16-OpenJ9-SWT_2021-09
 
   # ======================================================================
+  # JDK 17 - HotSpot
+  # ======================================================================
+
+  jdk17-HotSpot-SWT_2021-03:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up Adoptium 17
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          java-package: jdk
+          cache: 'maven'
+
+      - name: Change JDK
+        run: |
+          # POM
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget -q \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.1_12.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      # - name: Change SWT
+      #   run: |
+      #     # POM
+      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-03
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-03/Linux-jdk17-HotSpot-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-03/Windows-jdk17-HotSpot-SWT_2021-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-03/MacOS-jdk17-HotSpot-SWT_2021-03.zip
+          ls -lh $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-03
+
+      - uses: actions/upload-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2021-03
+          path: ./jdk17-HotSpot-SWT_2021-03
+  
+  # ---
+
+  jdk17-HotSpot-SWT_2021-06:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up Adoptium 17
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          java-package: jdk
+          cache: 'maven'
+
+      - name: Change JDK
+        run: |
+          # POM
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget -q \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.1_12.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      - name: Change SWT
+        run: |
+          # POM
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-06
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-06/Linux-jdk17-HotSpot-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-06/Windows-jdk17-HotSpot-SWT_2021-06.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-06/MacOS-jdk17-HotSpot-SWT_2021-06.zip
+          ls -lh $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-06
+
+      - uses: actions/upload-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2021-06
+          path: ./jdk17-HotSpot-SWT_2021-06
+  
+  # ---
+
+  jdk17-HotSpot-SWT_2021-09:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2'
+      
+      - name: Set up Adoptium 17
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          java-package: jdk
+          cache: 'maven'
+
+      - name: Change JDK
+        run: |
+          # POM
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          # Zipped JDK
+          sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          sed -i 's/wget -q \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.1_12.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+          # Moving zip
+          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+
+      - name: Change SWT
+        run: |
+          # POM
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-09
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-09/Linux-jdk17-HotSpot-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-09/Windows-jdk17-HotSpot-SWT_2021-09.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-09/MacOS-jdk17-HotSpot-SWT_2021-09.zip
+          ls -lh $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2021-09
+
+      - uses: actions/upload-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2021-09
+          path: ./jdk17-HotSpot-SWT_2021-09
+
+  # ======================================================================
+  # JDK 17 - OpenJ9
+  # ======================================================================
+  
+  # Not yet 🤷
+
+  # ======================================================================
   # Gather
   # ======================================================================
 
@@ -1369,12 +1563,87 @@ jobs:
           name: jdk16
           path: ./release/*zip
 
+  gather_JDK17:
+    needs: [jdk17-HotSpot-SWT_2021-03, jdk17-HotSpot-SWT_2021-06, jdk17-HotSpot-SWT_2021-09]
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Get every builds
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        run: |
+          mkdir ./artifacts
+          mkdir ./release
+
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2021-03
+          path: ./artifacts/jdk17-HotSpot-SWT_2021-03
+
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2021-06
+          path: ./artifacts/jdk17-HotSpot-SWT_2021-06
+
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2021-09
+          path: ./artifacts/jdk17-HotSpot-SWT_2021-09
+
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-OpenJ9-SWT_2021-03
+          path: ./artifacts/jdk17-OpenJ9-SWT_2021-03
+
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-OpenJ9-SWT_2021-06
+          path: ./artifacts/jdk17-OpenJ9-SWT_2021-06
+
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-OpenJ9-SWT_2021-09
+          path: ./artifacts/jdk17-OpenJ9-SWT_2021-09
+
+      - name: Prepare releases
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        run: |
+          find ./artifacts -name "*zip" -exec mv {} ./release/ \;
+          ls -lh ./release
+
+      - uses: actions/upload-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17
+          path: ./release/*zip
+
   # ======================================================================
   # ----------------------------------------------------------------------
   # ====================================================================== 
   
   lets-publish:
-    needs: [gather_JDK11, gather_JDK15, gather_JDK16]
+    needs: [gather_JDK11, gather_JDK15, gather_JDK16, gather_JDK17]
     runs-on: ubuntu-latest
     steps:
 
@@ -1408,6 +1677,14 @@ jobs:
         with:
           name: jdk16
           path: ./artifacts/jdk16
+
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17
+          path: ./artifacts/jdk17
 
       - name: Prepare releases
         if: always()
