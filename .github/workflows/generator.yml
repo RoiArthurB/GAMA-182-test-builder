@@ -1070,6 +1070,7 @@ jobs:
 
           sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
           sed -i 's/tycho.version>2.5.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          head -n 26 $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
 
       # - name: Change SWT
       #   run: |
