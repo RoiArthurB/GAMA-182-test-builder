@@ -1064,7 +1064,7 @@ jobs:
           # Add Tycho's Snapshot repo
           sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/<\/pluginRepositories>/<pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          sed -i 's/<\/pluginRepositories>/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
           # Bump Tycho version
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
@@ -1135,7 +1135,7 @@ jobs:
           # Add Tycho's Snapshot repo
           sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/<\/pluginRepositories>/<pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          sed -i 's/<\/pluginRepositories>/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
           # Bump Tycho version
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
@@ -1206,7 +1206,7 @@ jobs:
           # Add Tycho's Snapshot repo
           sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/<\/pluginRepositories>/<pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+          sed -i 's/<\/pluginRepositories>/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
           # Bump Tycho version
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
@@ -1282,6 +1282,8 @@ jobs:
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
           sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+
+          cat $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
 
       - name: Change SWT
         run: |
