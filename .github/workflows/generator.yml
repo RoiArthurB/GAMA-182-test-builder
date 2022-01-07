@@ -1049,7 +1049,7 @@ jobs:
           cache: 'maven'
 
       - name: Change SWT
-       run: |
+        run: |
          # POM
          sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
          sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
@@ -1098,7 +1098,7 @@ jobs:
           cache: 'maven'
 
       - name: Change SWT
-       run: |
+        run: |
          # POM
          sed -i 's/releases\/2021-12/releases\/2021-06/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
          sed -i 's/releases\/2021-12/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
@@ -1147,7 +1147,7 @@ jobs:
           cache: 'maven'
 
       - name: Change SWT
-       run: |
+        run: |
          # POM
          sed -i 's/releases\/2021-12/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
          sed -i 's/releases\/2021-12/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
@@ -1196,7 +1196,7 @@ jobs:
           cache: 'maven'
 
       #- name: Change SWT
-      # run: |
+      #  run: |
       #   # POM
       #   sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
       #   sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
