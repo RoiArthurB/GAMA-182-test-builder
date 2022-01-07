@@ -1038,7 +1038,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2'
+          ref: 'GAMA_1.8.2_jdk17'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -1048,34 +1048,12 @@ jobs:
           java-package: jdk
           cache: 'maven'
 
-      - name: Change JDK
-        run: |
-          # POM
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          find $GITHUB_WORKSPACE -name ".classpath" -or -name "MANIFEST.MF" -exec sed -i 's/JavaSE-11/JavaSE-17/g' {} \;
-          # Zipped JDK
-          sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.1_12.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Moving zip
-          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Add Tycho's Snapshot repo
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/<\/pluginRepositories>/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          # Bump Tycho version
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-
-      # - name: Change SWT
-      #   run: |
-      #     # POM
-      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-      #     sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      - name: Change SWT
+       run: |
+         # POM
+         sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
       - name: Build
         run: bash $GITHUB_WORKSPACE/travis/compile.sh
@@ -1109,7 +1087,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2'
+          ref: 'GAMA_1.8.2_jdk17'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -1119,34 +1097,12 @@ jobs:
           java-package: jdk
           cache: 'maven'
 
-      - name: Change JDK
-        run: |
-          # POM
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          find $GITHUB_WORKSPACE -name ".classpath" -or -name "MANIFEST.MF" -exec sed -i 's/JavaSE-11/JavaSE-17/g' {} \;
-          # Zipped JDK
-          sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.1_12.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Moving zip
-          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Add Tycho's Snapshot repo
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/<\/pluginRepositories>/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          # Bump Tycho version
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-
       - name: Change SWT
-        run: |
-          # POM
-          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/releases\/2021-03/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+       run: |
+         # POM
+         sed -i 's/releases\/2021-12/releases\/2021-06/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2021-06/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
       - name: Build
         run: bash $GITHUB_WORKSPACE/travis/compile.sh
@@ -1180,7 +1136,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2'
+          ref: 'GAMA_1.8.2_jdk17'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -1190,34 +1146,12 @@ jobs:
           java-package: jdk
           cache: 'maven'
 
-      - name: Change JDK
-        run: |
-          # POM
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          find $GITHUB_WORKSPACE -name ".classpath" -or -name "MANIFEST.MF" -exec sed -i 's/JavaSE-11/JavaSE-17/g' {} \;
-          # Zipped JDK
-          sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.1_12.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Moving zip
-          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Add Tycho's Snapshot repo
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/<\/pluginRepositories>/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          # Bump Tycho version
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-
       - name: Change SWT
-        run: |
-          # POM
-          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/releases\/2021-03/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+       run: |
+         # POM
+         sed -i 's/releases\/2021-12/releases\/2021-09/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2021-09/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
       - name: Build
         run: bash $GITHUB_WORKSPACE/travis/compile.sh
@@ -1251,7 +1185,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2'
+          ref: 'GAMA_1.8.2_jdk17'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -1261,36 +1195,12 @@ jobs:
           java-package: jdk
           cache: 'maven'
 
-      - name: Change JDK
-        run: |
-          # POM
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/jdk.version>15/jdk.version>17/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          find $GITHUB_WORKSPACE -name ".classpath" -or -name "MANIFEST.MF" -exec sed -i 's/JavaSE-11/JavaSE-17/g' {} \;
-          # Zipped JDK
-          sed -i 's/wget -q \$\(.*linux.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_linux_hotspot_17.0.1_12.tar.gz -O "jdk_linux_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*windows.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_windows_hotspot_17.0.1_12.zip -O "jdk_win_15.zip"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          sed -i 's/wget -q \$\(.*mac_openj9.*\)/wget https:\/\/github.com\/adoptium\/temurin17-binaries\/releases\/download\/jdk-17.0.1%2B12\/OpenJDK17U-jdk_x64_mac_hotspot_17.0.1_12.tar.gz -O "jdk_osx_15.tar.gz"/' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Moving zip
-          sed -i 's/jdk-15\*/jdk-17\*/g' $GITHUB_WORKSPACE/travis/zip_withjdk.sh
-          # Add Tycho's Snapshot repo
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/<distributionManagement/<pluginRepositories><pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories><distributionManagement/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/<\/pluginRepositories>/<pluginRepository><id>tycho-snapshots<\/id><url>https:\/\/repo.eclipse.org\/content\/repositories\/tycho-snapshots\/<\/url><\/pluginRepository><\/pluginRepositories>/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-          # Bump Tycho version
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/tycho.version>2.4.0/tycho.version>2.6.0-SNAPSHOT/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
-
-          cat $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-
-      - name: Change SWT
-        run: |
-          # POM
-          sed -i 's/releases\/2021-03/releases\/2021-12/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
-          sed -i 's/releases\/2021-03/releases\/2021-12/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
-          sed -i 's/releases\/2021-03/releases\/2021-12/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      #- name: Change SWT
+      # run: |
+      #   # POM
+      #   sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+      #   sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+      #   sed -i 's/releases\/2021-12/releases\/2021-03/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
       
       - name: Build
         run: bash $GITHUB_WORKSPACE/travis/compile.sh
