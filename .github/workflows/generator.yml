@@ -211,196 +211,8 @@ jobs:
           path: ./jdk17-HotSpot-SWT_2021-12
 
   # ======================================================================
-  # JDK 17 - OpenJ9
-  # ======================================================================
-  
-  # Not yet 🤷
-
-  # ======================================================================
   # Gather
   # ======================================================================
-
-  gather_JDK11:
-    needs: [jdk11-HotSpot-SWT_2021-03, jdk11-HotSpot-SWT_2021-06, jdk11-HotSpot-SWT_2021-09, jdk11-HotSpot-SWT_2021-12, jdk11-OpenJ9-SWT_2021-03, jdk11-OpenJ9-SWT_2021-06, jdk11-OpenJ9-SWT_2021-09, jdk11-OpenJ9-SWT_2021-12]
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Get every builds
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        run: |
-          mkdir ./artifacts
-          mkdir ./release
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-HotSpot-SWT_2021-03
-          path: ./artifacts/jdk11-HotSpot-SWT_2021-03
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-HotSpot-SWT_2021-06
-          path: ./artifacts/jdk11-HotSpot-SWT_2021-06
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-HotSpot-SWT_2021-09
-          path: ./artifacts/jdk11-HotSpot-SWT_2021-09
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-HotSpot-SWT_2021-12
-          path: ./artifacts/jdk11-HotSpot-SWT_2021-12
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-OpenJ9-SWT_2021-03
-          path: ./artifacts/jdk11-OpenJ9-SWT_2021-03
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-OpenJ9-SWT_2021-06
-          path: ./artifacts/jdk11-OpenJ9-SWT_2021-06
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-OpenJ9-SWT_2021-09
-          path: ./artifacts/jdk11-OpenJ9-SWT_2021-09
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11-OpenJ9-SWT_2021-12
-          path: ./artifacts/jdk11-OpenJ9-SWT_2021-12
-
-      - name: Prepare releases
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        run: |
-          find ./artifacts -name "*zip" -exec mv {} ./release/ \;
-          ls -lh ./release
-
-      - uses: actions/upload-artifact@master
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11
-          path: ./release/*zip
-
-  gather_JDK16:
-    needs: [jdk16-HotSpot-SWT_2021-03, jdk16-HotSpot-SWT_2021-06, jdk16-HotSpot-SWT_2021-09, jdk16-HotSpot-SWT_2021-12, jdk16-OpenJ9-SWT_2021-03, jdk16-OpenJ9-SWT_2021-06, jdk16-OpenJ9-SWT_2021-09, jdk16-OpenJ9-SWT_2021-12]
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Get every builds
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        run: |
-          mkdir ./artifacts
-          mkdir ./release
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-HotSpot-SWT_2021-03
-          path: ./artifacts/jdk16-HotSpot-SWT_2021-03
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-HotSpot-SWT_2021-06
-          path: ./artifacts/jdk16-HotSpot-SWT_2021-06
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-HotSpot-SWT_2021-09
-          path: ./artifacts/jdk16-HotSpot-SWT_2021-09
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-HotSpot-SWT_2021-12
-          path: ./artifacts/jdk16-HotSpot-SWT_2021-12
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-OpenJ9-SWT_2021-03
-          path: ./artifacts/jdk16-OpenJ9-SWT_2021-03
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-OpenJ9-SWT_2021-06
-          path: ./artifacts/jdk16-OpenJ9-SWT_2021-06
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-OpenJ9-SWT_2021-09
-          path: ./artifacts/jdk16-OpenJ9-SWT_2021-09
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16-OpenJ9-SWT_2021-12
-          path: ./artifacts/jdk16-OpenJ9-SWT_2021-12
-
-      - name: Prepare releases
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        run: |
-          find ./artifacts -name "*zip" -exec mv {} ./release/ \;
-          ls -lh ./release
-
-      - uses: actions/upload-artifact@master
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16
-          path: ./release/*zip
 
   gather_JDK17:
     needs: [jdk17-HotSpot-SWT_2021-03, jdk17-HotSpot-SWT_2021-06, jdk17-HotSpot-SWT_2021-09, jdk17-HotSpot-SWT_2021-12]
@@ -490,7 +302,7 @@ jobs:
   # ====================================================================== 
   
   lets-publish:
-    needs: [gather_JDK11, gather_JDK16, gather_JDK17]
+    needs: gather_JDK17
     runs-on: ubuntu-latest
     steps:
 
@@ -500,22 +312,6 @@ jobs:
         run: |
           mkdir ./artifacts
           mkdir ./release
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk11
-          path: ./artifacts/jdk11
-
-      - uses: actions/download-artifact@master
-        if: always()
-        env:
-          working_directory: $GITHUB_WORKSPACE
-        with:
-          name: jdk16
-          path: ./artifacts/jdk16
 
       - uses: actions/download-artifact@master
         if: always()
