@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2_jdk17'
+          ref: 'GAMA_1.8.2'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -71,7 +71,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2_jdk17'
+          ref: 'GAMA_1.8.2'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -120,7 +120,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2_jdk17'
+          ref: 'GAMA_1.8.2'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -169,7 +169,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2_jdk17'
+          ref: 'GAMA_1.8.2'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
@@ -218,7 +218,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: 'gama-platform/gama'
-          ref: 'GAMA_1.8.2_jdk17'
+          ref: 'GAMA_1.8.2'
       
       - name: Set up Temurin 17
         uses: actions/setup-java@v2 
