@@ -209,13 +209,62 @@ jobs:
         with:
           name: jdk17-HotSpot-SWT_2021-12
           path: ./jdk17-HotSpot-SWT_2021-12
+  
+  # ---
+
+  jdk17-HotSpot-SWT_2022-03:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'gama-platform/gama'
+          ref: 'GAMA_1.8.2_jdk17'
+      
+      - name: Set up Temurin 17
+        uses: actions/setup-java@v2 
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          java-package: jdk
+          cache: 'maven'
+
+      - name: Change SWT
+        run: |
+         # POM
+         sed -i 's/releases\/2021-12/releases\/2022-03/g' $GITHUB_WORKSPACE/ummisco.gama.annotations/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2022-03/g' $GITHUB_WORKSPACE/msi.gama.processor/pom.xml
+         sed -i 's/releases\/2021-12/releases\/2022-03/g' $GITHUB_WORKSPACE/msi.gama.parent/pom.xml
+      
+      - name: Build
+        run: bash $GITHUB_WORKSPACE/travis/compile.sh
+      
+      - name: Zip
+        run: bash $GITHUB_WORKSPACE/travis/zip_withjdk.sh
+      
+      - name: Test build headless
+        run: bash $GITHUB_WORKSPACE/ummisco.gama.product/target/products/ummisco.gama.application.product/linux/gtk/x86_64/headless/gama-headless.sh -validate 
+      
+      - name: Prepare releases
+        run: |
+          mkdir $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2022-03
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-linux.gtk.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2022-03/Linux-jdk17-HotSpot-SWT_2022-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-win32.win32.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2022-03/Windows-jdk17-HotSpot-SWT_2022-03.zip
+          mv $GITHUB_WORKSPACE/ummisco.gama.product/target/products/Gama1.7-macosx.cocoa.x86_64_withJDK.zip $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2022-03/MacOS-jdk17-HotSpot-SWT_2022-03.zip
+          ls -lh $GITHUB_WORKSPACE/jdk17-HotSpot-SWT_2022-03
+
+      - uses: actions/upload-artifact@master
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2022-03
+          path: ./jdk17-HotSpot-SWT_2022-03
 
   # ======================================================================
   # Gather
   # ======================================================================
 
   gather_JDK17:
-    needs: [jdk17-HotSpot-SWT_2021-03, jdk17-HotSpot-SWT_2021-06, jdk17-HotSpot-SWT_2021-09, jdk17-HotSpot-SWT_2021-12]
+    needs: [jdk17-HotSpot-SWT_2021-03, jdk17-HotSpot-SWT_2021-06, jdk17-HotSpot-SWT_2021-09, jdk17-HotSpot-SWT_2021-12, jdk17-HotSpot-SWT_2022-03]
     runs-on: ubuntu-latest
     steps:
 
@@ -258,29 +307,13 @@ jobs:
           name: jdk17-HotSpot-SWT_2021-12
           path: ./artifacts/jdk17-HotSpot-SWT_2021-12
 
-      #- uses: actions/download-artifact@master
-      #  if: always()
-      #  env:
-      #    working_directory: $GITHUB_WORKSPACE
-      #  with:
-      #    name: jdk17-OpenJ9-SWT_2021-03
-      #    path: ./artifacts/jdk17-OpenJ9-SWT_2021-03
-      #    
-      #- uses: actions/download-artifact@master
-      #  if: always()
-      #  env:
-      #    working_directory: $GITHUB_WORKSPACE
-      #  with:
-      #    name: jdk17-OpenJ9-SWT_2021-06
-      #    path: ./artifacts/jdk17-OpenJ9-SWT_2021-06
-      #    
-      #- uses: actions/download-artifact@master
-      #  if: always()
-      #  env:
-      #    working_directory: $GITHUB_WORKSPACE
-      #  with:
-      #    name: jdk17-OpenJ9-SWT_2021-09
-      #    path: ./artifacts/jdk17-OpenJ9-SWT_2021-09
+      - uses: actions/download-artifact@master
+        if: always()
+        env:
+          working_directory: $GITHUB_WORKSPACE
+        with:
+          name: jdk17-HotSpot-SWT_2022-03
+          path: ./artifacts/jdk17-HotSpot-SWT_2022-03
 
       - name: Prepare releases
         if: always()
